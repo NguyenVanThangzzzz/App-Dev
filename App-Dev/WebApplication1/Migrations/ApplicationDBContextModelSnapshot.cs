@@ -21,6 +21,68 @@ namespace WebApplication1.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
+            modelBuilder.Entity("WebApplication1.Models.Book", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Author")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryId");
+
+                    b.ToTable("Books");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Author = "Microsoft",
+                            CategoryId = 1,
+                            Description = "Basic start",
+                            Price = 10.0,
+                            Title = "Programming"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Author = "BTEC",
+                            CategoryId = 2,
+                            Description = "Enhancing",
+                            Price = 14.0,
+                            Title = "Advanced Programming"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Author = "Greenwich",
+                            CategoryId = 3,
+                            Description = "Not easy",
+                            Price = 15.0,
+                            Title = "Data Structures"
+                        });
+                });
+
             modelBuilder.Entity("WebApplication1.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -66,6 +128,17 @@ namespace WebApplication1.Migrations
                             DisplayOrder = 4,
                             Name = "History"
                         });
+                });
+
+            modelBuilder.Entity("WebApplication1.Models.Book", b =>
+                {
+                    b.HasOne("WebApplication1.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }

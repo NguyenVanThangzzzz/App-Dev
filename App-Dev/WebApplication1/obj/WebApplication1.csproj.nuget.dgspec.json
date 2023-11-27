@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\App Dev\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {}
+    "D:\\App Dev\\App-Dev\\WebApplication1\\WebApplication1.csproj": {}
   },
   "projects": {
-    "D:\\App Dev\\WebApplication1\\WebApplication1\\WebApplication1.csproj": {
+    "D:\\App Dev\\App-Dev\\WebApplication1\\WebApplication1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\App Dev\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectUniqueName": "D:\\App Dev\\App-Dev\\WebApplication1\\WebApplication1.csproj",
         "projectName": "WebApplication1",
-        "projectPath": "D:\\App Dev\\WebApplication1\\WebApplication1\\WebApplication1.csproj",
+        "projectPath": "D:\\App Dev\\App-Dev\\WebApplication1\\WebApplication1.csproj",
         "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\App Dev\\WebApplication1\\WebApplication1\\obj\\",
+        "outputPath": "D:\\App Dev\\App-Dev\\WebApplication1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
